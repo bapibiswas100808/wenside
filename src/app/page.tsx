@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowDownRight,
   ArrowRight,
   ArrowUpRight,
   BadgeCheck,
@@ -11,17 +10,15 @@ import {
   Sparkles,
 } from "lucide-react";
 import ProductCard from "@/components/products/ProductCard";
-import { products } from "@/data/products";
+import { getProductCategoryDetails, products } from "@/data/products";
 
-const categories = [
-  { title: "Activated Carbon Filter Tips", note: "Filter formats for your range", category: "Filters & tips", image: "/images/filters.svg" },
-  { title: "Rolling Papers & Paper Tips", note: "Everyday rolling essentials", category: "Papers & tips", image: "/images/papers.svg" },
-  { title: "Grinders", note: "A range of sizes & styles", category: "Grinders", image: "/images/metal-grinder.svg" },
-  { title: "Smoking Trays", note: "A thoughtful tabletop essential", category: "Trays", image: "/images/tray.svg" },
-  { title: "Rolling Machines", note: "Tools for a complete assortment", category: "Rolling tools", image: "/images/rolling-machine.svg" },
-  { title: "Pipes & Holders", note: "Complementary accessories", category: "Pipes & holders", image: "/images/pipes.svg" },
-  { title: "Storage Products", note: "Keep the details together", category: "Storage", image: "/images/storage.svg" },
-  { title: "Accessory Sets & Gift Boxes", note: "Curated, coordinated collections", category: "Sets & packaging", image: "/images/gift-set.svg" },
+const categories = getProductCategoryDetails();
+const heroProducts = [
+  { name: "Pre-rolled cones", image: "/images/products/pre_rolled_cone1.png" },
+  { name: "Hemp wraps", image: "/images/products/hemp_wrap1.png" },
+  { name: "Tips & filters", image: "/images/products/carbon_tips2.png" },
+  { name: "Paper bobbins", image: "/images/products/bobbins2.jpg" },
+  { name: "Smoking accessories", image: "/images/products/accessories2.png" },
 ];
 
 const benefits = [
@@ -37,44 +34,40 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <div className="hero-kicker"><span className="status-dot" /> YOUR NEXT GREAT SUPPLY PARTNER</div>
-          <h1>Good things<br />start with <em>the right</em><br />little details.</h1>
-          <p>Smoking accessories for brands with a point of view. Explore our product range and make your next idea a reality with Wenside.</p>
+          <h1>Your partner in<br /><em>smoking accessories</em><br />and B2B supply.</h1>
+          <p>Wenside supplies smoking accessories and packaging solutions for modern brands, wholesalers, and distributors worldwide.</p>
           <div className="hero-actions">
-            <Link className="button button-dark" href="/products">Explore products <ArrowUpRight size={17} /></Link>
-            <Link className="button button-outline" href="/contact">Talk to our team <ArrowRight size={17} /></Link>
+            <Link className="button button-dark" href="/products">Explore our products <ArrowUpRight size={17} /></Link>
+            <Link className="button button-outline" href="/contact">Request a quote <ArrowRight size={17} /></Link>
           </div>
-          <div className="hero-footnote"><span>01 — B2B PRODUCT SUPPLY</span><span>02 — OEM & PRIVATE LABEL</span></div>
+          <div className="hero-footnote"><span>MANUFACTURING & GLOBAL SUPPLY</span><span>OEM / ODM CUSTOMIZATION</span></div>
         </div>
-        <div className="hero-visual">
-          <Image
-            src="/images/hero.svg"
-            alt="Illustrative graphic of sample accessory packaging concepts, not a verified Wenside product"
-            fill
-            priority
-            sizes="(max-width: 760px) 100vw, 52vw"
-          />
-          <div className="hero-sticker"><span>MADE FOR</span><strong>YOUR<br />NEXT<br />IDEA</strong><ArrowDownRight size={24} /></div>
-          <div className="hero-image-caption"><span>CURATED GOODS, CONSIDERED DETAILS</span><span>VISUAL FOR DIRECTION ONLY</span></div>
-          <span className="hero-side-note">GOOD DESIGN IS IN THE DETAILS</span>
+        <div className="hero-visual" aria-label="Wenside product catalogue highlights">
+          {heroProducts.map((product, index) => (
+            <div className="hero-product" key={product.name}>
+              <Image src={product.image} alt={product.name} fill priority={index < 2} sizes="(max-width: 760px) 45vw, 18vw" />
+              <span>{product.name}</span>
+            </div>
+          ))}
+          <span className="hero-image-caption">FROM THE WENSIDE PRODUCT CATALOGUE</span>
         </div>
-        <div className="hero-index">W / 01</div>
       </section>
 
       <section className="ticker" aria-label="Wenside capabilities">
-        <div className="ticker-track">PRODUCTS WITH PURPOSE <span>✳</span> YOUR BRAND, YOUR WAY <span>✳</span> MADE FOR THE NEXT IDEA <span>✳</span> PRODUCTS WITH PURPOSE <span>✳</span></div>
+        <div className="ticker-track">PRE-ROLLED CONES <span>✳</span> HEMP WRAPS <span>✳</span> ROLLING PAPERS &amp; TIPS <span>✳</span> ACCESSORIES <span>✳</span> OEM / ODM <span>✳</span></div>
       </section>
 
       <section className="section categories-section">
         <div className="section-heading">
-          <div><span className="eyebrow">A RANGE WITH ROOM TO GROW</span><h2>Find your <em>thing.</em></h2></div>
-          <p>From everyday essentials to finishing touches, explore a product mix ready to make your own.</p>
+          <div><span className="eyebrow">PRODUCTS FROM THE CATALOGUE</span><h2>Explore by <em>category.</em></h2></div>
+          <p>Browse Wenside’s catalogue categories and discover the formats available for your product range.</p>
         </div>
         <div className="category-grid">
           {categories.map((category, index) => (
-            <Link className={`category-tile category-tile-${(index % 4) + 1}`} href={`/products?category=${encodeURIComponent(category.category)}`} key={category.title}>
-              <Image src={category.image} alt="" fill sizes="(max-width: 760px) 45vw, 23vw" className="category-image" />
-              <span className="category-index">0{index + 1} / 08</span>
-              <div><h3>{category.title}</h3><span>{category.note}</span></div>
+            <Link className={`category-tile category-tile-${(index % 4) + 1}`} href={`/products?category=${encodeURIComponent(category.name)}`} key={category.name}>
+              {category.image && <Image src={category.image} alt={category.imageAlt} fill sizes="(max-width: 760px) 45vw, 23vw" className="category-image" />}
+              <span className="category-index">{category.count} {category.count === 1 ? "PRODUCT" : "PRODUCT TYPES"}</span>
+              <div><h3>{category.name}</h3><span>{category.description}</span></div>
               <span className="category-icon"><ArrowUpRight size={20} /></span>
             </Link>
           ))}
@@ -85,7 +78,7 @@ export default function Home() {
       <section className="featured-section">
         <div className="section section-inner">
           <div className="section-heading">
-            <div><span className="eyebrow">A FEW GOOD STARTING POINTS</span><h2>Meet the <em>line-up.</em></h2></div>
+            <div><span className="eyebrow">FROM THE WENSIDE CATALOGUE</span><h2>Featured <em>products.</em></h2></div>
             <Link className="button button-outline" href="/products">View the catalogue <ArrowRight size={16} /></Link>
           </div>
           <div className="product-grid product-grid-home">
@@ -93,15 +86,15 @@ export default function Home() {
               <ProductCard key={product.id} product={product} index={index} />
             ))}
           </div>
-          <p className="sample-note">Sample product names and images shown for layout purposes; details should be confirmed with Wenside.</p>
+          <p className="sample-note">Product options and availability may vary. Contact Wenside to confirm details for your requirements.</p>
         </div>
       </section>
 
       <section className="why-section section">
         <div className="why-intro">
-          <span className="eyebrow">GOOD PARTNERS MAKE GOOD PRODUCTS</span>
-          <h2>More than just<br />a <em>product list.</em></h2>
-          <p>We help you bring thoughtful accessories and considered branding together, with a team focused on your business requirements.</p>
+          <span className="eyebrow">WHY CHOOSE WENSIDE</span>
+          <h2>Product supply,<br /><em>made easier.</em></h2>
+          <p>Wenside’s catalogue highlights OEM / ODM customization, quality checks, export experience, and customer support for international buyers.</p>
           <Link className="text-link" href="/about-us">Get to know Wenside <ArrowUpRight size={16} /></Link>
           <div className="why-stamp"><BadgeCheck size={26} /><span>DETAILS<br />MATTER</span></div>
         </div>
@@ -129,9 +122,22 @@ export default function Home() {
         <div className="oem-copy">
           <span className="eyebrow">OEM & PRIVATE LABEL</span>
           <h2>Make it<br /><em>yours.</em></h2>
-          <p>Have an idea for a signature product or a more cohesive range? Ask us about custom logos, colors, packaging, and branded accessory sets. Options are subject to product availability and confirmation.</p>
-          <ul><li>Product and color conversations</li><li>Custom logo and packaging inquiries</li><li>Accessory set concepts</li></ul>
+          <p>Wenside’s catalogue lists OEM / ODM services including logo printing, custom sizes and materials, packaging design, flavor development for hemp wraps, and box, tube, and display packaging.</p>
+          <ul><li>Logo printing and private-label options</li><li>Custom sizes, materials, and packaging</li><li>Hemp-wrap flavor development inquiries</li></ul>
           <Link className="button button-dark" href="/contact">Discuss your project <ArrowUpRight size={17} /></Link>
+        </div>
+      </section>
+
+      <section className="about-preview section">
+        <div className="about-preview-image">
+          <Image src="/images/products/quality2.png" alt="Product hand-rolling shown in the Wenside company catalogue" fill sizes="(max-width: 760px) 100vw, 40vw" />
+          <span className="image-note">WENSIDE CATALOGUE</span>
+        </div>
+        <div className="about-preview-copy">
+          <span className="eyebrow">ABOUT WENSIDE</span>
+          <h2>Built to support<br />brands <em>worldwide.</em></h2>
+          <p>Wenside Shanghai International E-Commerce Co., Ltd. describes itself as a manufacturer and global supplier of smoking accessories and packaging solutions for modern brands, wholesalers, and distributors.</p>
+          <Link className="text-link" href="/about-us">More about Wenside <ArrowUpRight size={16} /></Link>
         </div>
       </section>
 

@@ -13,7 +13,7 @@ export default function ProductsPage() {
     <main className="catalogue-page">
       <section className="page-hero catalogue-hero">
         <div className="page-hero-main">
-          <span className="eyebrow">THE WENSIDE RANGE / 01—09</span>
+          <span className="eyebrow">THE WENSIDE RANGE / 15 PRODUCT TYPES</span>
           <h1>Good things,<br /><em>in good company.</em></h1>
           <p>Explore a considered selection of smoking accessories for your next range. Looking for a specific format? Let’s talk.</p>
         </div>

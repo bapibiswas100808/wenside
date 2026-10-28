@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { notFound } from "next/navigation";
 import ProductCard from "@/components/products/ProductCard";
 import { getProduct, products } from "@/data/products";
+import ProductGallery from "@/components/products/ProductGallery";
 
 export function generateStaticParams() {
   return products.map(({ slug }) => ({ slug }));
@@ -26,28 +26,35 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
     .map((relatedSlug) => getProduct(relatedSlug))
     .filter((item) => item && item.slug !== product.slug)
     .slice(0, 3);
+  const gallery = [product.image, ...(product.gallery ?? [])]
+    .filter((image): image is string => Boolean(image))
+    .map((src) => ({ src, alt: product.imageAlt ?? `${product.name} product image` }));
 
   return (
     <main className="product-detail-page">
-      <div className="breadcrumbs section"><Link href="/products"><ArrowLeft size={15} /> Catalogue</Link><span>/</span><span>{product.category}</span><span>/</span><span>{product.name}</span></div>
+      <div className="breadcrumbs section"><Link href="/"><ArrowLeft size={15} /> Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><span>{product.name}</span></div>
       <section className="product-detail section">
-        <div className="detail-image">
-          <Image src={product.image} alt={product.imageAlt} fill priority sizes="(max-width: 760px) 100vw, 52vw" />
-          <span className="image-note">SAMPLE VISUAL · NOT A VERIFIED PRODUCT IMAGE</span>
-        </div>
+        <ProductGallery images={gallery} title={product.name} />
         <div className="detail-copy">
-          <span className="eyebrow">{product.category} / SAMPLE LISTING</span>
+          <span className="eyebrow">{product.category}{product.modelNumber ? ` / ${product.modelNumber}` : ""}</span>
           <h1>{product.name}</h1>
           <p className="detail-lead">{product.shortDescription}</p>
           <p>{product.description}</p>
-          <div className="detail-specs">
-            <span className="eyebrow">A FEW THINGS TO KNOW</span>
-            {product.features.map((feature) => <div key={feature}><Check size={16} />{feature}</div>)}
-          </div>
-          <p className="detail-disclaimer">Specifications, materials, colors, and availability are not verified. Please confirm product information directly with Wenside.</p>
+          {product.specifications && product.specifications.length > 0 && (
+            <dl className="detail-specs">
+              <dt className="eyebrow">PRODUCT SPECIFICATIONS</dt>
+              {product.specifications.map(({ label, value }) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+            </dl>
+          )}
+          {product.materials && <div className="detail-spec-list"><h2>Materials</h2><p>{product.materials.join(" · ")}</p></div>}
+          {product.variants && <div className="detail-spec-list"><h2>Options in the catalogue</h2><p>{product.variants.join(" · ")}</p></div>}
+          {product.features && product.features.length > 0 && <div className="detail-spec-list"><h2>Features</h2><ul>{product.features.map((feature) => <li key={feature}><Check size={15} />{feature}</li>)}</ul></div>}
+          {product.customization && <div className="detail-spec-list"><h2>Customization</h2><p>{product.customization}</p></div>}
+          <p className="detail-disclaimer">Product details are based on the supplied Wenside catalogue. Confirm current options and specifications with the sales team.</p>
           <div className="detail-actions">
-            <Link className="button button-dark" href={`/contact?product=${encodeURIComponent(product.name)}`}>Request a quote <ArrowUpRight size={17} /></Link>
-            <Link className="text-link" href={`/contact?product=${encodeURIComponent(product.name)}`}>Ask about custom branding <ArrowUpRight size={15} /></Link>
+            <Link className="button button-dark" href={`/contact?product=${encodeURIComponent(product.name)}${product.modelNumber ? `&model=${encodeURIComponent(product.modelNumber)}` : ""}`}>Request a quote <ArrowUpRight size={17} /></Link>
+            <Link className="text-link" href={`/contact?product=${encodeURIComponent(product.name)}${product.modelNumber ? `&model=${encodeURIComponent(product.modelNumber)}` : ""}`}>Ask about this product <ArrowUpRight size={15} /></Link>
+            <Link className="text-link" href={`/contact?product=${encodeURIComponent(product.name)}&inquiry=OEM%20%2F%20private%20label`}>Discuss custom branding <ArrowUpRight size={15} /></Link>
           </div>
         </div>
       </section>

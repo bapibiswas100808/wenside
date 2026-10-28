@@ -15,7 +15,7 @@ export default function ProductBrowser() {
     const filtered = products.filter((product) => {
       const matchesCategory = !category || product.category === category;
       const search = query.trim().toLowerCase();
-      const matchesQuery = !search || `${product.name} ${product.category} ${product.shortDescription}`.toLowerCase().includes(search);
+      const matchesQuery = !search || `${product.name} ${product.modelNumber ?? ""} ${product.category} ${product.shortDescription} ${(product.keywords ?? []).join(" ")}`.toLowerCase().includes(search);
       return matchesCategory && matchesQuery;
     });
     if (sort === "name") filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -68,7 +68,7 @@ export default function ProductBrowser() {
       ) : (
         <div className="empty-state"><span className="eyebrow">NOTHING HERE JUST YET</span><h2>No matches <em>found.</em></h2><p>Try a different search or clear the selected category to explore the full range.</p><button className="button button-dark" onClick={clearFilters} type="button">Clear filters <X size={16} /></button></div>
       )}
-      <p className="sample-note catalogue-note">The products and visuals shown here are sample content only; availability and specifications are subject to confirmation.</p>
+      <p className="sample-note catalogue-note">Product information and images are taken from the supplied Wenside catalogue. Confirm current options, specifications, and availability with the sales team.</p>
     </>
   );
 }

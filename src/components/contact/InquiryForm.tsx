@@ -8,6 +8,8 @@ import { products } from "@/data/products";
 export default function InquiryForm() {
   const searchParams = useSearchParams();
   const productName = searchParams.get("product") ?? "";
+  const inquiryType = searchParams.get("inquiry") ?? "";
+  const model = searchParams.get("model") ?? "";
   const [submitted, setSubmitted] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -23,7 +25,7 @@ export default function InquiryForm() {
         <label>Business email <span>*</span><input name="email" type="email" autoComplete="email" required placeholder="you@company.com" /></label>
         <label>Country <span>*</span><input name="country" autoComplete="country-name" required placeholder="Where are you based?" /></label>
         <label>Inquiry type <span>*</span>
-          <select name="inquiry" required defaultValue=""><option value="" disabled>Select an inquiry</option><option>Product sourcing</option><option>OEM / private label</option><option>Product catalogue</option><option>Other</option></select>
+          <select name="inquiry" required defaultValue={inquiryType}><option value="" disabled>Select an inquiry</option><option>Product sourcing</option><option>OEM / private label</option><option>Product catalogue</option><option>Other</option></select>
         </label>
         <label>Product of interest
           <select name="product" defaultValue={productName}>
@@ -31,6 +33,7 @@ export default function InquiryForm() {
             {products.map((product) => <option value={product.name} key={product.id}>{product.name}</option>)}
           </select>
         </label>
+        {model && <label>Model<input name="model" defaultValue={model} readOnly /></label>}
         <label className="form-full">Message <span>*</span><textarea name="message" rows={5} required placeholder="Tell us a little about what you need..." /></label>
       </div>
       <div className="form-disclaimer"><Info size={17} /><span>This is a frontend demonstration form. Your details are not sent or stored. Connect a verified inquiry service before publishing.</span></div>

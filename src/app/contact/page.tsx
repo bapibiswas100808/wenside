@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { ArrowDownRight, ArrowUpRight, Mail, MessageCircle } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, Globe2, Mail, Phone } from "lucide-react";
 import { Suspense } from "react";
 import InquiryForm from "@/components/contact/InquiryForm";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact Wenside",
@@ -24,9 +25,11 @@ export default function ContactPage() {
           <span className="eyebrow">THE FIRST STEP IS EASY</span>
           <h2>Tell us what<br /><em>you have in mind.</em></h2>
           <p>Share your requirements and our team can follow up once verified contact details and a submission service have been connected.</p>
-          <div className="contact-method"><span><Mail size={20} /></span><div><b>Email</b><small>Add verified company email</small></div><ArrowUpRight size={16} /></div>
-          <div className="contact-method"><span><MessageCircle size={20} /></span><div><b>WhatsApp</b><small>Add verified business number</small></div><ArrowUpRight size={16} /></div>
-          <div className="contact-note"><span className="note-star">✳</span><p>We haven’t added contact details yet rather than guess. Replace these prompts with confirmed company contact information before launch.</p></div>
+          <a className="contact-method" href={`mailto:${siteConfig.contactEmail}`}><span><Mail size={20} /></span><div><b>Email</b><small>{siteConfig.contactEmail}</small></div><ArrowUpRight size={16} /></a>
+          <a className="contact-method" href={`tel:${siteConfig.phoneLink}`}><span><Phone size={20} /></span><div><b>Telephone</b><small>{siteConfig.phone}</small></div><ArrowUpRight size={16} /></a>
+          <a className="contact-method" href={siteConfig.website} target="_blank" rel="noreferrer"><span><Globe2 size={20} /></span><div><b>Website</b><small>wen-side.com</small></div><ArrowUpRight size={16} /></a>
+          <a className="contact-method" href={siteConfig.zapWrapWebsite} target="_blank" rel="noreferrer"><span><Globe2 size={20} /></span><div><b>ZapWrap</b><small>zap-wrap.com</small></div><ArrowUpRight size={16} /></a>
+          <div className="contact-note"><span className="note-star">✳</span><p>Social handle in the catalogue: {siteConfig.socialHandle}. A platform or profile URL was not specified, so no social link is assumed.</p></div>
         </div>
         <div className="contact-form-wrap">
           <Suspense fallback={<div className="catalogue-loading" aria-label="Loading inquiry form" />}>

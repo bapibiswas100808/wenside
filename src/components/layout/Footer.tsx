@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { productCategories } from "@/data/products";
 import CurrentYear from "@/components/layout/CurrentYear";
+import Image from "next/image";
+import { siteConfig } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -9,10 +11,10 @@ export default function Footer() {
       <div className="footer-top">
         <div className="footer-brand">
           <Link className="wordmark footer-wordmark" href="/">
-            <span className="wordmark-icon" aria-hidden="true">w.</span>
-            <span>WENSIDE<small>SUPPLY CO.</small></span>
+            <Image className="wordmark-image" height={56} width={56} src="/images/logo.png" alt="" />
+            <span>WENSIDE<small>GLOBAL SUPPLY</small></span>
           </Link>
-          <p>Thoughtful smoking accessories, made for the brands building what’s next.</p>
+          <p>{siteConfig.legalName}<br />Smoking accessories and packaging solutions for international brands.</p>
         </div>
         <div className="footer-column">
           <h3>Explore</h3>
@@ -22,7 +24,7 @@ export default function Footer() {
         </div>
         <div className="footer-column">
           <h3>Categories</h3>
-          {productCategories.slice(0, 4).map((category) => (
+          {productCategories.map((category) => (
             <Link key={category} href={`/products?category=${encodeURIComponent(category)}`}>
               {category}
             </Link>
@@ -31,13 +33,14 @@ export default function Footer() {
         <div className="footer-contact">
           <span className="eyebrow">LET’S MAKE SOMETHING GOOD</span>
           <Link className="footer-cta" href="/contact">Start a conversation <ArrowUpRight size={18} /></Link>
-          <p>Contact details will be added once verified.</p>
+          <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+          <a href={`tel:${siteConfig.phoneLink}`}>{siteConfig.phone}</a>
         </div>
       </div>
       <div className="footer-bottom">
         <span>© <CurrentYear /> Wenside. All rights reserved.</span>
-        <span>Product visuals are illustrative samples.</span>
-        <span>Designed for good things.</span>
+        <a href={siteConfig.website}>wen-side.com</a>
+        <span>{siteConfig.socialHandle} · <a href={siteConfig.zapWrapWebsite}>ZapWrap</a></span>
       </div>
     </footer>
   );

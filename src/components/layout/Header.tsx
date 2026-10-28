@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "Home" },
@@ -25,15 +26,15 @@ export default function Header() {
       </div>
       <div className="nav-wrap">
         <Link className="wordmark" href="/" aria-label="Wenside home" onClick={() => setOpen(false)}>
-          <span className="wordmark-icon" aria-hidden="true">w.</span>
-          <span>WENSIDE<small>SUPPLY CO.</small></span>
+          <Image className="wordmark-image" height={56} width={56} src="/images/logo.png" alt="" />
+          <span>WENSIDE<small>GLOBAL SUPPLY</small></span>
         </Link>
         <nav className={`main-nav ${open ? "is-open" : ""}`} aria-label="Main navigation">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              aria-current={pathname === href ? "page" : undefined}
+              aria-current={pathname === href || (href === "/products" && pathname.startsWith("/products/")) ? "page" : undefined}
               onClick={() => setOpen(false)}
             >
               {label}
