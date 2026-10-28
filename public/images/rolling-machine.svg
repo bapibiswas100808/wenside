@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850">
+  <rect width="1000" height="850" fill="#eadfce"/>
+  <circle cx="790" cy="171" r="218" fill="#e3c9b0"/>
+  <ellipse cx="492" cy="669" rx="322" ry="54" fill="#584c40" opacity=".16"/>
+  <g transform="rotate(-8 500 432)">
+    <rect x="217" y="315" width="566" height="242" rx="119" fill="#657755"/>
+    <rect x="244" y="340" width="512" height="190" rx="94" fill="#879375"/>
+    <ellipse cx="281" cy="435" rx="44" ry="94" fill="#4d6142"/>
+    <ellipse cx="719" cy="435" rx="44" ry="94" fill="#526747"/>
+    <path d="M320 341v188m360-188v188" stroke="#c6c9b6" stroke-width="5"/>
+    <path d="M248 606c164 37 340 43 506 3" fill="none" stroke="#f7f0df" stroke-width="25" stroke-linecap="round"/>
+    <path d="M261 609c153 32 327 37 481 5" fill="none" stroke="#c7aa83" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="499" cy="435" r="19" fill="#e85d32"/>
+  </g>
+  <text x="62" y="784" fill="#696b60" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">ROLLING TOOLS / CONCEPT VISUAL</text>
+</svg>

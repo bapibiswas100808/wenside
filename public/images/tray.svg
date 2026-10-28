@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850">
+  <rect width="1000" height="850" fill="#dcd8c9"/>
+  <path d="M0 150 1000 0v850H0z" fill="#e8e4d7"/>
+  <ellipse cx="500" cy="649" rx="344" ry="74" fill="#474b40" opacity=".19"/>
+  <g transform="rotate(-7 500 430)">
+    <rect x="181" y="252" width="641" height="344" rx="77" fill="#687958"/>
+    <rect x="210" y="279" width="583" height="288" rx="59" fill="#a9b08f"/>
+    <rect x="243" y="309" width="516" height="229" rx="42" fill="#d5cfb9"/>
+    <path d="M280 475c79 14 150 14 218 0m-197-39c78 13 146 12 213-2m52 49c57-11 110-31 159-62" fill="none" stroke="#a69d86" stroke-width="3"/>
+    <circle cx="659" cy="368" r="13" fill="#e85d32"/>
+    <circle cx="698" cy="402" r="8" fill="#647551"/>
+    <circle cx="621" cy="424" r="7" fill="#c78763"/>
+    <path d="m329 366 18 11-18 11m17-11h43" fill="none" stroke="#687958" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="292" y="512" fill="#5b604f" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">A LITTLE ROOM TO ROLL</text>
+  </g>
+</svg>

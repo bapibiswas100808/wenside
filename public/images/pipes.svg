@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850">
+  <rect width="1000" height="850" fill="#e9d8c6"/>
+  <path d="M0 692 1000 583v267H0z" fill="#dfc7b1"/>
+  <ellipse cx="509" cy="643" rx="331" ry="53" fill="#514237" opacity=".17"/>
+  <g transform="rotate(-13 500 431)">
+    <path d="M277 499c91 2 185-31 284-108 50-39 99-63 153-70 54-7 83 19 79 60-3 36-32 53-75 50-45-4-86 12-126 43-107 83-205 123-306 122-37 0-58-19-58-48 0-30 18-49 49-49z" fill="#69795a"/>
+    <path d="M601 389c15-46 61-85 118-84 61 2 93 47 75 94-12 30-42 45-80 42" fill="#81906f"/>
+    <path d="M709 355c28-7 51 9 50 31-1 18-18 30-43 28" fill="none" stroke="#d8d0bc" stroke-width="8"/>
+    <path d="M294 506c77-3 171-35 250-92" fill="none" stroke="#aeba9f" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="291" cy="548" r="29" fill="#e85d32"/>
+  </g>
+  <text x="63" y="783" fill="#67675d" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">SHAPES &amp; SMALL DETAILS</text>
+</svg>

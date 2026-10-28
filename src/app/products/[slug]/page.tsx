@@ -1,0 +1,62 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
+import { notFound } from "next/navigation";
+import ProductCard from "@/components/products/ProductCard";
+import { getProduct, products } from "@/data/products";
+
+export function generateStaticParams() {
+  return products.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = getProduct(slug);
+  if (!product) return { title: "Product not found" };
+  return { title: product.name, description: product.shortDescription };
+}
+
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = getProduct(slug);
+  if (!product) notFound();
+
+  const related = (product.relatedProductSlugs ?? [])
+    .map((relatedSlug) => getProduct(relatedSlug))
+    .filter((item) => item && item.slug !== product.slug)
+    .slice(0, 3);
+
+  return (
+    <main className="product-detail-page">
+      <div className="breadcrumbs section"><Link href="/products"><ArrowLeft size={15} /> Catalogue</Link><span>/</span><span>{product.category}</span><span>/</span><span>{product.name}</span></div>
+      <section className="product-detail section">
+        <div className="detail-image">
+          <Image src={product.image} alt={product.imageAlt} fill priority sizes="(max-width: 760px) 100vw, 52vw" />
+          <span className="image-note">SAMPLE VISUAL · NOT A VERIFIED PRODUCT IMAGE</span>
+        </div>
+        <div className="detail-copy">
+          <span className="eyebrow">{product.category} / SAMPLE LISTING</span>
+          <h1>{product.name}</h1>
+          <p className="detail-lead">{product.shortDescription}</p>
+          <p>{product.description}</p>
+          <div className="detail-specs">
+            <span className="eyebrow">A FEW THINGS TO KNOW</span>
+            {product.features.map((feature) => <div key={feature}><Check size={16} />{feature}</div>)}
+          </div>
+          <p className="detail-disclaimer">Specifications, materials, colors, and availability are not verified. Please confirm product information directly with Wenside.</p>
+          <div className="detail-actions">
+            <Link className="button button-dark" href={`/contact?product=${encodeURIComponent(product.name)}`}>Request a quote <ArrowUpRight size={17} /></Link>
+            <Link className="text-link" href={`/contact?product=${encodeURIComponent(product.name)}`}>Ask about custom branding <ArrowUpRight size={15} /></Link>
+          </div>
+        </div>
+      </section>
+      {related.length > 0 && (
+        <section className="related-section section">
+          <div className="section-heading"><div><span className="eyebrow">KEEP EXPLORING</span><h2>You may also <em>like.</em></h2></div><Link className="text-link" href="/products">View all products <ArrowUpRight size={16} /></Link></div>
+          <div className="product-grid">{related.map((item, index) => item && <ProductCard key={item.id} product={item} index={index} />)}</div>
+        </section>
+      )}
+    </main>
+  );
+}

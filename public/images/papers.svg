@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850">
+  <rect width="1000" height="850" fill="#e8d6c3"/>
+  <path d="M0 622 1000 560v290H0z" fill="#dbc2a9"/>
+  <ellipse cx="516" cy="650" rx="325" ry="52" fill="#594a3e" opacity=".14"/>
+  <g transform="rotate(-9 420 425)">
+    <rect x="231" y="202" width="374" height="421" rx="12" fill="#fbf4e3"/>
+    <rect x="231" y="202" width="374" height="56" rx="12" fill="#e85d32"/>
+    <path d="M231 246h374" stroke="#e85d32" stroke-width="28"/>
+    <text x="280" y="319" fill="#30332c" font-family="Georgia,serif" font-size="39" font-style="italic">roll your way</text>
+    <path d="M280 341h270" stroke="#b8b09f" stroke-width="2"/>
+    <text x="282" y="378" fill="#77796f" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">PAPER &amp; TIPS</text>
+    <rect x="281" y="409" width="274" height="149" rx="8" fill="#e7dfce"/>
+    <path d="M312 531 492 437m-159 108 180-94m-145 113 179-94" stroke="#a8a38e" stroke-width="4" opacity=".75"/>
+    <path d="M625 492c75-6 115 10 151 42" fill="none" stroke="#f7f0df" stroke-width="20" stroke-linecap="round"/>
+    <path d="M630 486c69-4 108 13 145 39" fill="none" stroke="#b69d79" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <circle cx="788" cy="195" r="58" fill="#f2a276"/>
+  <text x="760" y="202" fill="#fff" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">01</text>
+</svg>

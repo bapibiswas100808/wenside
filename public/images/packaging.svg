@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850">
+  <rect width="1000" height="850" fill="#d7d2c4"/>
+  <circle cx="785" cy="145" r="215" fill="#c5cabb"/>
+  <path d="M0 650 1000 566v284H0z" fill="#bcb9aa"/>
+  <ellipse cx="499" cy="660" rx="332" ry="55" fill="#353931" opacity=".2"/>
+  <g transform="rotate(5 500 420)">
+    <rect x="202" y="265" width="273" height="345" rx="11" fill="#fbf4e4"/>
+    <rect x="202" y="265" width="273" height="83" rx="11" fill="#e85d32"/>
+    <text x="247" y="398" fill="#2f332c" font-family="Georgia,serif" font-size="34" font-style="italic">made for you</text>
+    <path d="M246 426h183m-183 14h145" stroke="#b8b2a1" stroke-width="2"/>
+    <rect x="251" y="480" width="176" height="74" rx="9" fill="#dfe0d1"/>
+    <circle cx="340" cy="517" r="22" fill="#e6a37a"/>
+    <rect x="509" y="326" width="248" height="286" rx="28" fill="#657652"/>
+    <rect x="529" y="302" width="209" height="54" rx="16" fill="#4d6040"/>
+    <rect x="541" y="413" width="183" height="130" rx="12" fill="#f1ecde"/>
+    <path d="M575 480h113m-91-30h69m-69 59h69" stroke="#e85d32" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="62" y="785" fill="#55594f" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">PACKAGING IS PART OF THE STORY</text>
+</svg>

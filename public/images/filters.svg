@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850">
+  <rect width="1000" height="850" fill="#ddd9cd"/>
+  <circle cx="780" cy="170" r="210" fill="#c9ccbd"/>
+  <ellipse cx="500" cy="654" rx="325" ry="57" fill="#34382f" opacity=".14"/>
+  <g transform="rotate(-7 465 432)">
+    <rect x="258" y="191" width="380" height="430" rx="20" fill="#f4efdf"/>
+    <rect x="258" y="191" width="380" height="82" rx="20" fill="#566a48"/>
+    <path d="M258 253h380" stroke="#566a48" stroke-width="40"/>
+    <text x="303" y="327" fill="#30342e" font-family="Arial,sans-serif" font-size="23" letter-spacing="4">FILTER TIPS</text>
+    <text x="305" y="359" fill="#818274" font-family="Arial,sans-serif" font-size="13" letter-spacing="2">SAMPLE RANGE CONCEPT</text>
+    <rect x="322" y="402" width="248" height="119" rx="16" fill="#e1dccd"/>
+    <g fill="#e4b686">
+      <rect x="346" y="423" width="28" height="76" rx="14"/><rect x="389" y="423" width="28" height="76" rx="14"/>
+      <rect x="432" y="423" width="28" height="76" rx="14"/><rect x="475" y="423" width="28" height="76" rx="14"/>
+      <rect x="518" y="423" width="28" height="76" rx="14"/>
+    </g>
+    <circle cx="448" cy="570" r="10" fill="#e85d32"/>
+  </g>
+</svg>

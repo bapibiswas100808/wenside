@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850">
+  <rect width="1000" height="850" fill="#d5dacd"/>
+  <circle cx="800" cy="160" r="210" fill="#c1cbb9"/>
+  <ellipse cx="490" cy="670" rx="320" ry="59" fill="#34382f" opacity=".2"/>
+  <g>
+    <ellipse cx="500" cy="305" rx="218" ry="83" fill="#9ea294"/>
+    <path d="M282 305v89c0 47 97 85 218 85s218-38 218-85v-89c0 46-97 83-218 83s-218-37-218-83z" fill="#70796a"/>
+    <ellipse cx="500" cy="305" rx="218" ry="83" fill="#c3c6b8" stroke="#72796b" stroke-width="8"/>
+    <ellipse cx="500" cy="305" rx="175" ry="56" fill="#a2a796"/>
+    <path d="M325 306c15 43 112 57 175 57s160-14 175-57" fill="none" stroke="#e5e3d8" stroke-width="7" opacity=".8"/>
+    <ellipse cx="500" cy="491" rx="186" ry="72" fill="#8d9385"/>
+    <path d="M314 491v71c0 40 83 72 186 72s186-32 186-72v-71c0 40-83 71-186 71s-186-31-186-71z" fill="#687261"/>
+    <ellipse cx="500" cy="491" rx="186" ry="72" fill="#aeb3a4" stroke="#6b7364" stroke-width="8"/>
+    <circle cx="500" cy="491" r="34" fill="#747b6d"/>
+    <path d="M454 309v30m46-34v34m48-34v30m-119 127v25m70-28v30m70-30v26" stroke="#e9e9de" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="61" y="788" fill="#55594f" font-family="Arial,sans-serif" font-size="14" letter-spacing="3">FORM &amp; FINISH / SAMPLE VISUAL</text>
+</svg>
