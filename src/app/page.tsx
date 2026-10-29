@@ -161,8 +161,7 @@ export default function Home() {
         <div className="category-grid grid grid-cols-4 gap-3 max-md:grid-cols-2 max-md:gap-2">
           {categories.map((category) => (
             <Link
-              className="category-tile group flex min-h-72 flex-col overflow-hidden
-                transition-transform hover:-translate-y-1 max-md:min-h-64"
+              className="category-tile group flex min-h-72 flex-col overflow-hidden max-md:min-h-64"
               href={`/products?category=${encodeURIComponent(category.name)}`}
               key={category.name}
             >

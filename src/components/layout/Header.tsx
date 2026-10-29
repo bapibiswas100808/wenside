@@ -21,7 +21,7 @@ export default function Header() {
     <header className="site-header sticky top-0 z-20 bg-paper-light">
       <div
         className="announcement h-7 bg-ink text-stone-100 flex items-center justify-center gap-3
-          text-xs font-bold tracking-widest max-md:h-7"
+          text-xs font-bold tracking-widest max-md:h-7 px-4"
       >
         <span>PRODUCTS THAT MAKE YOUR BRAND</span>
         <span className="announcement-star text-stone-500 text-sm" aria-hidden="true">
@@ -39,15 +39,16 @@ export default function Header() {
         >
           <Image
             // className="wordmark-image"
-            height={200}
-            width={200}
+            height={180}
+            width={180}
             src="/images/logo.png"
             alt=""
           />
+
           {/* <span>WENSIDE<small>GLOBAL SUPPLY</small></span> */}
         </Link>
         <nav
-          className={`main-nav ${open ? "is-open" : ""} flex items-center gap-6`}
+          className={`main-nav ${open ? "is-open" : ""} flex items-center gap-1 lg:gap-6`}
           aria-label="Main navigation"
         >
           {links.map(({ href, label }) => (
@@ -72,6 +73,13 @@ export default function Header() {
             Request a quote <ArrowUpRight size={16} />
           </Link>
         </nav>
+        <Image
+          // className="wordmark-image"
+          height={80}
+          width={80}
+          src="/images/zapwrap-logo.png"
+          alt=""
+        />
         <Link
           className="nav-quote desktop-quote min-h-11 inline-flex justify-center items-center gap-3
             bg-orange text-white text-sm font-semibold transition-transform max-md:hidden"

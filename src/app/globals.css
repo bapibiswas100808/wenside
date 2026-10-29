@@ -540,7 +540,7 @@ h2 em {
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--paper-light);
-  transition: transform 0.25s ease;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .category-image-wrap {
   position: relative;
@@ -554,14 +554,14 @@ h2 em {
   padding: 0;
   object-fit: cover;
   transition:
-    opacity 0.25s ease,
-    transform 0.4s ease;
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .category-tile:hover .category-image {
-  transform: scale(1.05);
+  transform: scale(1.035);
 }
 .category-tile:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 .category-index {
   color: var(--muted);
@@ -598,8 +598,9 @@ h2 em {
   color: var(--ink);
   border-radius: 50%;
   transition:
-    background 0.2s,
-    color 0.2s;
+    background 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .category-tile:hover .category-icon {
   color: white;
@@ -667,10 +668,10 @@ h2 em {
   object-position: center;
   mix-blend-mode: normal;
   filter: none;
-  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .product-card:hover .product-card-image img {
-  transform: scale(1.045);
+  transform: scale(1.035);
 }
 .missing-card-image {
   height: 100%;
@@ -2437,15 +2438,15 @@ body {
 
 .hero-copy,
 .page-hero-main {
-  animation: text-enter 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: text-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .page-hero-aside {
-  animation: text-enter 0.75s 0.12s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation: text-enter 0.9s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .site-header .wordmark-image {
-  animation: image-enter 0.8s ease both;
+  animation: image-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes text-enter {
@@ -2461,53 +2462,47 @@ body {
 
 @keyframes image-enter {
   from {
-    opacity: 1;
-    transform: scale(0.985);
+    opacity: 0.75;
   }
   to {
     opacity: 1;
-    transform: scale(1);
   }
 }
 
 @supports (animation-timeline: view()) {
-  .section-heading,
-  .why-intro,
-  .oem-copy,
-  .about-preview-copy,
-  .quality-copy,
-  .about-story-copy,
-  .contact-details,
-  .detail-copy,
-  .footer-brand,
-  .footer-column,
-  .footer-contact,
-  .pillar-grid article,
-  .benefit-card,
-  .category-tile,
-  .product-card {
+  main h1,
+  main h2,
+  main h3,
+  main p,
+  main li,
+  main .eyebrow,
+  main .text-link,
+  main .button,
+  main .category-index,
+  main .product-card-meta,
+  main .detail-specs,
+  main .form-disclaimer,
+  main .contact-method,
+  .main-nav > a,
+  .site-footer p,
+  .site-footer a {
     animation: text-enter linear both;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
     animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+    animation-range: entry 0% entry 40%;
   }
 
-  .hero-banner-frame,
-  .category-image,
-  .product-card-image img,
-  .oem-image img,
-  .about-preview-image img,
-  .quality-image img,
-  .about-image img,
-  .detail-image img {
+  main img:not(.hero-banner-image),
+  .site-footer img {
     animation: image-enter linear both;
     animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+    animation-range: entry 0% entry 40%;
   }
 
-  .site-footer .wordmark-image {
+  .hero-banner-frame {
     animation: image-enter linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 35%;
+    animation-duration: 0.9s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
 

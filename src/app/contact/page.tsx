@@ -129,11 +129,40 @@ export default function ContactPage() {
             <ArrowUpRight size={16} />
           </a>
           <div className="contact-note mt-6 p-3.5 flex items-start gap-2.5 bg-stone-100">
-            <span className="note-star text-orange text-2xl">✳</span>
-            <p>
-              Social handle in the catalogue: {siteConfig.socialHandle}. A platform or profile URL
-              was not specified, so no social link is assumed.
-            </p>
+            {/* <span className="note-star text-orange text-2xl">✳</span> */}
+            <div className="mt-4 flex items-center gap-3">
+              <a
+                className="grid size-10 place-items-center rounded-full border border-stone-500
+                  text-stone-300 transition hover:border-orange hover:text-orange"
+                href="https://www.facebook.com/wenside1"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Wenside on Facebook"
+              >
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5 fill-current">
+                  <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H7.3V13h2.8v8h3.4Z" />
+                </svg>
+              </a>
+              <a
+                className="grid size-10 place-items-center rounded-full border border-stone-500
+                  text-stone-300 transition hover:border-orange hover:text-orange"
+                href="https://www.instagram.com/wenside1"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Wenside on Instagram"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="size-5 fill-none stroke-current"
+                  strokeWidth="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" className="fill-current stroke-none" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
         <div className="contact-form-wrap p-7 bg-stone-100 max-md:py-5 px-3.5">
