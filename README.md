@@ -2,6 +2,8 @@
 
 Responsive B2B catalogue site for Wenside, built with Next.js App Router, TypeScript, and Tailwind CSS. Product descriptions and specifications are based on the supplied 18-page Wenside catalogue; product photography and illustrations are local assets.
 
+Styling is implemented with Tailwind utilities in the JSX. `src/app/tailwind.css` only loads Tailwind; there is no site-specific global stylesheet.
+
 ## Run locally
 
 ```bash

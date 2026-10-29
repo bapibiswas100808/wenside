@@ -5,13 +5,19 @@ import { useState } from "react";
 
 type GalleryImage = { src: string; alt: string };
 
-export default function ProductGallery({ images, title }: { images: GalleryImage[]; title: string }) {
+export default function ProductGallery({
+  images,
+  title,
+}: {
+  images: GalleryImage[];
+  title: string;
+}) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeImage = images[activeIndex];
 
   return (
     <div className="product-gallery">
-      <div className="detail-image">
+      <div className="detail-image relative min-h-96 overflow-hidden bg-stone-100">
         {activeImage ? (
           <Image
             src={activeImage.src}
@@ -21,9 +27,20 @@ export default function ProductGallery({ images, title }: { images: GalleryImage
             sizes="(max-width: 760px) 100vw, 52vw"
           />
         ) : (
-          <div className="missing-product-image"><span>PRODUCT IMAGE</span><strong>{title}</strong><small>Image to be confirmed</small></div>
+          <div className="missing-product-image">
+            <span>PRODUCT IMAGE</span>
+            <strong>{title}</strong>
+            <small>Image to be confirmed</small>
+          </div>
         )}
-        {activeImage && <span className="image-note">WENSIDE CATALOGUE IMAGE</span>}
+        {activeImage && (
+          <span
+            className="image-note absolute z-10 top-3 left-3 py-1.5 px-2 text-white bg-stone-700
+              text-xs font-bold tracking-widest"
+          >
+            WENSIDE CATALOGUE IMAGE
+          </span>
+        )}
       </div>
       {images.length > 1 && (
         <div className="gallery-thumbnails" aria-label={`${title} image gallery`}>

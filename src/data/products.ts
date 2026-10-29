@@ -28,7 +28,8 @@ export const products: Product[] = [
     name: "Pre-Rolled Cones",
     slug: "pre-rolled-cones",
     category: "Pre-Rolled Cones",
-    shortDescription: "Ready-to-fill cones made for retail brands, private labels, and promotional kits.",
+    shortDescription:
+      "Ready-to-fill cones made for retail brands, private labels, and promotional kits.",
     description:
       "Premium ready-to-fill cones designed for smooth burning and consistent performance. The catalogue describes food-grade natural paper, machine rolling with hand checks, optional filters, and multiple size formats.",
     image: image("products/pre_rolled_cone1.png"),
@@ -36,7 +37,10 @@ export const products: Product[] = [
     gallery: [image("products/pre_rolled_cone2.png")],
     materials: ["Food-grade natural paper"],
     specifications: [
-      { label: "Available sizes", value: "70 mm, 84 mm, 98 mm, 109 mm, King Size, and other sizes" },
+      {
+        label: "Available sizes",
+        value: "70 mm, 84 mm, 98 mm, 109 mm, King Size, and other sizes",
+      },
       { label: "Filter", value: "Optional filters included" },
       { label: "Production", value: "Machine-rolled and hand-checked" },
     ],
@@ -80,7 +84,8 @@ export const products: Product[] = [
     materials: ["Natural wood-pulp paper", "Hemp paper"],
     variants: ["Ultra-thin options", "Standard or custom sizes", "Magnetic or classic flap"],
     features: ["Compact format", "Eco-friendly material options"],
-    customization: "Custom cover printing and private-label merchandise are listed in the catalogue.",
+    customization:
+      "Custom cover printing and private-label merchandise are listed in the catalogue.",
     keywords: ["rolling paper", "booklet", "booklets", "papers", "hemp paper"],
     featured: true,
     relatedProductSlugs: ["paper-bobbins", "paper-tips", "hemp-wraps"],
@@ -95,14 +100,29 @@ export const products: Product[] = [
       "Rolling-paper bobbins for cigarette-tobacco rolling paper. The catalogue lists several paper types and widths. The supplied bobbin visuals include both a 36 mm × 3,000 m sample and a 5,000 m maximum length; confirm the exact length and width combination for each order.",
     image: image("products/bobbins2.jpg"),
     imageAlt: "Sample white and brown paper bobbin rolls",
-    gallery: [image("products/bobbins1.jpg"), image("products/bobbins3.jpg"), image("products/bobbins4.png")],
+    gallery: [
+      image("products/bobbins1.jpg"),
+      image("products/bobbins3.jpg"),
+      image("products/bobbins4.png"),
+    ],
     specifications: [
       { label: "Available widths", value: "36 mm, 44 mm, and 54 mm" },
-      { label: "Length", value: "5,000 m × 44 mm is specified in the catalogue; a supplied visual also shows 36 mm × 3,000 m" },
-      { label: "Paper types", value: "12.5 gsm wood; 13 gsm unbleached hemp; 14 gsm rice; 14 gsm flavored; 14 gsm colored; 18.5–20 gsm wood" },
+      {
+        label: "Length",
+        value:
+          "5,000 m × 44 mm is specified in the catalogue; a supplied visual also shows 36 mm × 3,000 m",
+      },
+      {
+        label: "Paper types",
+        value:
+          "12.5 gsm wood; 13 gsm unbleached hemp; 14 gsm rice; 14 gsm flavored; 14 gsm colored; 18.5–20 gsm wood",
+      },
     ],
     variants: ["36 mm", "44 mm", "54 mm", "Different paper types"],
-    features: ["Gum-strip option shown in catalogue imagery", "Compatible bobbin widths shown for paper types"],
+    features: [
+      "Gum-strip option shown in catalogue imagery",
+      "Compatible bobbin widths shown for paper types",
+    ],
     keywords: ["bobbin", "bobbins", "roll", "gsm", "paper roll", "wood", "hemp"],
     featured: true,
     relatedProductSlugs: ["rolling-paper-booklets", "hemp-wraps", "paper-tips"],
@@ -116,7 +136,11 @@ export const products: Product[] = [
     description:
       "Paper tips are listed in the catalogue as one of Wenside’s available filter-tip formats. The catalogue does not provide a dedicated product image or further product-specific material or dimension data for this format.",
     keywords: ["paper", "tip", "tips", "filter", "perforated"],
-    relatedProductSlugs: ["pre-rolled-filter-tips", "activated-carbon-tips", "rolling-paper-booklets"],
+    relatedProductSlugs: [
+      "pre-rolled-filter-tips",
+      "activated-carbon-tips",
+      "rolling-paper-booklets",
+    ],
   },
   {
     id: "pre-rolled-filter-tips",
@@ -130,7 +154,8 @@ export const products: Product[] = [
     imageAlt: "Packaged pre-rolled filter tips from the supplied catalogue assets",
     gallery: [image("products/pre_rolled_tips2.png"), image("products/carbon_tips1.png")],
     features: ["Bulk and retail packaging options listed", "Custom branding listed"],
-    customization: "Custom branding is listed for tips and filters; confirm product-specific options.",
+    customization:
+      "Custom branding is listed for tips and filters; confirm product-specific options.",
     keywords: ["pre-rolled", "prerolled", "filter tips", "tips"],
     featured: true,
     relatedProductSlugs: ["paper-tips", "activated-carbon-tips", "pre-rolled-cones"],
@@ -180,9 +205,12 @@ export const products: Product[] = [
     image: image("products/grinder1.png"),
     imageAlt: "Clear plastic grinder shown in the supplied Wenside product images",
     materials: ["Plastic"],
-    specifications: [{ label: "Available sizes", value: "Multiple sizes; confirm current options" }],
+    specifications: [
+      { label: "Available sizes", value: "Multiple sizes; confirm current options" },
+    ],
     features: ["Custom colors and designs listed"],
-    customization: "OEM service, custom colors, logo printing, and private labeling are listed in the catalogue.",
+    customization:
+      "OEM service, custom colors, logo printing, and private labeling are listed in the catalogue.",
     keywords: ["plastic", "grinder", "grinders"],
     featured: true,
     relatedProductSlugs: ["metal-grinders", "smoking-trays", "silicone-storage"],
@@ -198,9 +226,12 @@ export const products: Product[] = [
     image: image("products/grinder2.png"),
     imageAlt: "Metal grinder shown in the supplied Wenside product images",
     materials: ["Metal"],
-    specifications: [{ label: "Available sizes", value: "Multiple sizes; confirm current options" }],
+    specifications: [
+      { label: "Available sizes", value: "Multiple sizes; confirm current options" },
+    ],
     features: ["Custom colors and designs listed"],
-    customization: "OEM service, custom colors, logo printing, and private labeling are listed in the catalogue.",
+    customization:
+      "OEM service, custom colors, logo printing, and private labeling are listed in the catalogue.",
     keywords: ["metal", "grinder", "grinders"],
     featured: true,
     relatedProductSlugs: ["plastic-grinders", "smoking-trays", "activated-carbon-tips"],
@@ -216,8 +247,11 @@ export const products: Product[] = [
     image: image("products/tray1.png"),
     imageAlt: "Printed smoking tray shown in the supplied Wenside product images",
     gallery: [image("products/tray2.png")],
-    specifications: [{ label: "Available options", value: "Different sizes, shapes, materials, and designs" }],
-    customization: "Custom colors, designs, and logos are listed; confirm available tray-specific options.",
+    specifications: [
+      { label: "Available options", value: "Different sizes, shapes, materials, and designs" },
+    ],
+    customization:
+      "Custom colors, designs, and logos are listed; confirm available tray-specific options.",
     keywords: ["smoking tray", "tray", "trays"],
     featured: true,
     relatedProductSlugs: ["silicone-ashtrays", "plastic-grinders", "metal-grinders"],
@@ -261,8 +295,14 @@ export const products: Product[] = [
     ],
     materials: ["Plastic"],
     specifications: [
-      { label: "Sizes", value: "Multiple sizes; two supplied image labels show 11.5 × 1.5 cm and 11.8 × 1.9 cm" },
-      { label: "Colors", value: "Customizable; the supplied images show black, white, pink, and clear examples" },
+      {
+        label: "Sizes",
+        value: "Multiple sizes; two supplied image labels show 11.5 × 1.5 cm and 11.8 × 1.9 cm",
+      },
+      {
+        label: "Colors",
+        value: "Customizable; the supplied images show black, white, pink, and clear examples",
+      },
       { label: "Application", value: "Cone storage and protection" },
     ],
     variants: ["Multiple sizes and colors"],
@@ -286,7 +326,8 @@ export const products: Product[] = [
       { label: "Shapes and sizes", value: "Various options; confirm current availability" },
       { label: "Colors", value: "Customizable" },
     ],
-    customization: "Custom colors, logos, and designs are listed, subject to manufacturing capabilities.",
+    customization:
+      "Custom colors, logos, and designs are listed, subject to manufacturing capabilities.",
     keywords: ["silicone", "silicon", "storage", "container", "containers"],
     featured: true,
     relatedProductSlugs: ["silicone-ashtrays", "plastic-cone-tubes", "plastic-grinders"],
@@ -307,7 +348,8 @@ export const products: Product[] = [
       { label: "Shapes and sizes", value: "Various options; confirm current availability" },
       { label: "Colors", value: "Customizable" },
     ],
-    customization: "Custom colors, logos, and designs are listed, subject to manufacturing capabilities.",
+    customization:
+      "Custom colors, logos, and designs are listed, subject to manufacturing capabilities.",
     keywords: ["silicone", "silicon", "ashtray", "ashtrays", "ash tray"],
     featured: true,
     relatedProductSlugs: ["smoking-trays", "silicone-storage", "metal-grinders"],
