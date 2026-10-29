@@ -347,8 +347,8 @@ h2 em {
   /* padding: 40px; */
   overflow: hidden;
   background:
-    radial-gradient(circle at 78% 19%, #f2b86d66, transparent 29%),
-    linear-gradient(140deg, #dce5d2 0%, #b8c9ae 100%);
+    radial-gradient(circle at 78% 19%, #f2b86d66, transparent 40%),
+    linear-gradient(140deg, #dce5d2 0%, #f1f0f7 100%);
 }
 .hero-banner::before {
   position: absolute;
@@ -544,12 +544,15 @@ h2 em {
 }
 .category-image-wrap {
   position: relative;
-  height: 170px;
+  height: auto;
+  aspect-ratio: 1 / 1;
   flex: 0 0 auto;
   overflow: hidden;
-  background: #e9e7e0;
+  background: #fff;
 }
 .category-image {
+  padding: 0;
+  object-fit: cover;
   transition:
     opacity 0.25s ease,
     transform 0.4s ease;
@@ -654,14 +657,16 @@ h2 em {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1.08;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #e3dfd2;
+  background: #fff;
 }
 .product-card-image img {
-  padding: 12px;
-  object-fit: contain;
-  mix-blend-mode: multiply;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+  mix-blend-mode: normal;
+  filter: none;
   transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .product-card:hover .product-card-image img {
@@ -675,15 +680,6 @@ h2 em {
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.12em;
-}
-.card-tone-1 .product-card-image {
-  background: #e7d9c8;
-}
-.card-tone-2 .product-card-image {
-  background: #d6dacd;
-}
-.card-tone-3 .product-card-image {
-  background: #e4d7c6;
 }
 .image-note {
   position: absolute;
@@ -1390,7 +1386,8 @@ h2 em {
 }
 .gallery-thumbnails {
   margin-top: 10px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 72px);
   gap: 9px;
 }
 .gallery-thumbnails button {
@@ -1931,7 +1928,7 @@ h2 em {
     min-height: 0;
   }
   .category-image-wrap {
-    height: 130px;
+    height: auto;
   }
   .category-copy {
     min-height: 128px;
@@ -2464,10 +2461,12 @@ body {
 
 @keyframes image-enter {
   from {
-    opacity: 0.55;
+    opacity: 1;
+    transform: scale(0.985);
   }
   to {
     opacity: 1;
+    transform: scale(1);
   }
 }
 

@@ -166,16 +166,14 @@ export default function Home() {
               href={`/products?category=${encodeURIComponent(category.name)}`}
               key={category.name}
             >
-              <div
-                className="category-image-wrap relative h-40 shrink-0 overflow-hidden bg-stone-100"
-              >
+              <div className="category-image-wrap relative shrink-0 overflow-hidden bg-white">
                 {category.image && (
                   <Image
                     src={category.image}
                     alt={category.imageAlt}
                     fill
                     sizes="(max-width: 760px) 45vw, 23vw"
-                    className="category-image object-contain p-3 transition-transform
+                    className="category-image object-cover transition-transform
                       group-hover:scale-105"
                   />
                 )}
@@ -314,17 +312,31 @@ export default function Home() {
 
       <section className="oem-section min-h-96 grid grid-cols-2 bg-stone-100 max-md:grid-cols-1">
         <div className="oem-image relative min-h-96 overflow-hidden bg-stone-200 max-md:min-h-80">
-          <Image
-            src="/images/packaging.svg"
-            alt="Illustrative graphic of packaging concepts, not an actual Wenside product"
-            fill
-            sizes="(max-width: 760px) 100vw, 50vw"
-          />
+          <div className="absolute inset-0 grid grid-cols-2 gap-3 p-4 lg:gap-5 lg:p-6">
+            <div className="relative min-w-0 overflow-hidden rounded-sm bg-stone-100">
+              <Image
+                src="/images/products/contact1.png"
+                alt="Lifestyle campaign artwork from the supplied catalogue"
+                fill
+                sizes="(max-width: 760px) 45vw, 25vw"
+                className="object-contain p-2"
+              />
+            </div>
+            <div className="relative min-w-0 overflow-hidden rounded-sm bg-stone-100">
+              <Image
+                src="/images/products/contact2.png"
+                alt="Promotional brand artwork from the supplied catalogue"
+                fill
+                sizes="(max-width: 760px) 45vw, 25vw"
+                className="object-contain p-2"
+              />
+            </div>
+          </div>
           <span
             className="image-note absolute z-10 top-3 left-3 py-1.5 px-2 text-white bg-stone-700
               text-xs font-bold tracking-widest"
           >
-            ILLUSTRATIVE INSPIRATION
+            BRAND & LIFESTYLE INSPIRATION
           </span>
           <div
             className="oem-image-label absolute z-10 bottom-9 left-0 text-white font-serif text-5xl

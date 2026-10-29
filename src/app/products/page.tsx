@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArrowDownRight } from "lucide-react";
 import { Suspense } from "react";
 import ProductBrowser from "@/components/products/ProductBrowser";
+import { products } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Product Catalogue",
@@ -21,7 +22,7 @@ export default function ProductsPage() {
             className="eyebrow inline-flex items-center gap-2 text-muted text-xs font-bold
               tracking-widest leading-normal"
           >
-            THE WENSIDE RANGE / 15 PRODUCT TYPES
+            THE WENSIDE RANGE / {products.length} PRODUCT TYPES
           </span>
           <h1>
             Good things,

@@ -3,32 +3,21 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Product } from "@/data/products";
 
-const imageTones = ["bg-stone-100", "bg-stone-200", "bg-stone-300", "bg-stone-200"];
-
 export default function ProductCard({ product, index = 0 }: { product: Product; index?: number }) {
   return (
     <article className={`product-card card-tone-${index % 4} min-w-0 `}>
       <Link
         href={`/products/${product.slug}`}
-        className={`product-card-image ${imageTones[index % imageTones.length]} relative block
-          w-full aspect-square overflow-hidden `}
+        className="product-card-image relative block w-full aspect-square overflow-hidden bg-white"
         aria-label={`View ${product.name}`}
       >
         {product.image ? (
-          <>
-            <Image
-              src={product.image}
-              alt={product.imageAlt ?? product.name}
-              fill
-              sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 25vw"
-            />
-            <span
-              className="image-note absolute z-10 top-3 left-3 py-1.5 px-2 text-white bg-stone-700
-                text-xs font-bold tracking-widest"
-            >
-              CATALOGUE IMAGE
-            </span>
-          </>
+          <Image
+            src={product.image}
+            alt={product.imageAlt ?? product.name}
+            fill
+            sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 25vw"
+          />
         ) : (
           <span className="missing-card-image">IMAGE TO BE ADDED</span>
         )}
