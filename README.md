@@ -22,6 +22,18 @@ npm run build
 
 The app is Vercel-compatible. Set `NEXT_PUBLIC_SITE_URL` to the canonical deployment URL when deploying; the default is `https://wen-side.com`, as listed in the catalogue.
 
+### Deploy to cPanel Node.js Applications
+
+This Next.js app requires a Node.js server; it cannot be hosted as a static GitHub Pages site. For the cPanel Node.js app screen:
+
+1. Clone `https://github.com/bapibiswas100808/wenside.git` with cPanel **Git Version Control** into the application root directory (for example, `nextapp`).
+2. Set **Node.js version** to 22, **Application mode** to Production, **Application root** to that repository directory, **Application URL** to `wen-side.com/`, and **Application startup file** to `app.js`.
+3. Use **Run NPM Install** in the Node.js app panel, or run `npm install` in the repository directory.
+4. Build the production app from the repository directory with `npm run build`.
+5. In the Node.js app panel, restart the application. After future GitHub updates, pull/deploy the new commit, run `npm install` if dependencies changed, rebuild with `npm run build`, and restart.
+
+The root `app.js` starts the production Next.js server on the port supplied by the hosting panel.
+
 ## Content and assets
 
 - **Product data:** edit `src/data/products.ts`. It currently contains 15 catalogue product types in 10 catalogue-derived categories. The PDF provides options and sizes but does not identify formal model/SKU codes.
