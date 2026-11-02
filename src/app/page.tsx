@@ -49,6 +49,7 @@ const benefits = [
 export default function Home() {
   return (
     <main>
+      {/* banner */}
       <section
         className="hero relative flex flex-col overflow-hidden bg-stone-100 lg:grid lg:grid-cols-2"
       >
@@ -61,17 +62,15 @@ export default function Home() {
             YOUR NEXT GREAT SUPPLY PARTNER
           </div>
           <h1 className="my-0 mt-7 mb-6 text-5xl leading-none font-medium tracking-tighter text-ink">
-            Your partner in
+            Your global source for
             <br />
-            <em className="font-serif font-medium tracking-tighter text-orange">
-              smoking accessories
-            </em>
+            <em className="font-serif font-medium tracking-tighter text-orange">rolling papers</em>
             <br />
-            and B2B supply.
+            and smoking accessories.
           </h1>
           <p className="mb-7 max-w-96 text-sm leading-loose text-stone-500 lg:text-sm">
-            Wenside supplies smoking accessories and packaging solutions for modern brands,
-            wholesalers, and distributors worldwide.
+            Wenside is your trusted partner for rolling papers, smoking accessories, and custom
+            packaging solutions, serving brands, wholesalers, and distributors worldwide.
           </p>
           <div className="flex flex-wrap gap-2.5 max-sm:max-w-72">
             <Link
@@ -116,7 +115,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      {/* slider */}
       <section
         className="ticker h-12 flex items-center overflow-hidden bg-orange text-stone-100"
         aria-label="Wenside capabilities"
@@ -136,7 +135,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+      {/* products */}
       <section
         className="section categories-section w-full max-w-7xl mx-auto pt-28 pb-28 max-md:pt-20
           max-md:pb-16"
@@ -205,7 +204,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
+      {/* featured products */}
       <section className="featured-section bg-stone-100">
         <div className="section section-inner w-full max-w-7xl mx-auto">
           <div
@@ -249,7 +248,7 @@ export default function Home() {
           </p>
         </div>
       </section>
-
+      {/* why choose us */}
       <section
         className="why-section section pt-32 pb-32 grid grid-cols-2 gap-6 max-xl:gap-6
           max-md:grid-cols-1 max-md:pt-20 max-md:pb-20 w-full max-w-7xl mx-auto"
@@ -267,8 +266,9 @@ export default function Home() {
             <em>made easier.</em>
           </h2>
           <p>
-            Wenside’s catalogue highlights OEM / ODM customization, quality checks, export
-            experience, and customer support for international buyers.
+            Wenside offers OEM/ODM customization, premium-quality rolling papers and smoking
+            accessories, strict quality control, reliable export services, and dedicated customer
+            support for international brands, wholesalers, and distributors.
           </p>
           <Link
             className="text-link inline-flex items-center gap-2 text-sm font-semibold"
@@ -308,7 +308,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+      {/* make it yours */}
       <section className="oem-section min-h-96 grid grid-cols-2 bg-stone-100 max-md:grid-cols-1">
         <div className="oem-image relative min-h-96 overflow-hidden bg-stone-200 max-md:min-h-80">
           <div className="absolute inset-0 grid grid-cols-2 gap-3 p-4 lg:gap-5 lg:p-6">
@@ -359,9 +359,10 @@ export default function Home() {
             <em>yours.</em>
           </h2>
           <p>
-            Wenside’s catalogue lists OEM / ODM services including logo printing, custom sizes and
-            materials, packaging design, flavor development for hemp wraps, and box, tube, and
-            display packaging.
+            Wenside provides comprehensive OEM/ODM solutions, including custom logo printing,
+            tailored sizes and materials, packaging design, hemp wrap flavor development, and
+            customized boxes, tubes, and display packaging to meet the unique needs of international
+            brands and distributors.
           </p>
           <ul>
             <li>Logo printing and private-label options</li>
@@ -377,7 +378,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
+      {/* built to support brands worldwide */}
       <section
         className="section grid grid-cols-1 items-center gap-8 py-16 lg:grid-cols-2 w-full max-w-7xl
           mx-auto"
@@ -410,9 +411,9 @@ export default function Home() {
             brands <em>worldwide.</em>
           </h2>
           <p className="max-w-96 text-xs leading-loose text-muted">
-            Wenside Shanghai International E-Commerce Co., Ltd. describes itself as a manufacturer
-            and global supplier of smoking accessories and packaging solutions for modern brands,
-            wholesalers, and distributors.
+            Wenside Shanghai International E-Commerce Co., Ltd. is a manufacturer and global
+            supplier specializing in rolling papers, smoking accessories, and customized packaging
+            solutions for brands, wholesalers, and distributors worldwide.
           </p>
           <Link
             className="text-link inline-flex items-center gap-2 text-sm font-semibold"

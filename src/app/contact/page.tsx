@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowDownRight, ArrowUpRight, Globe2, Mail, Phone } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, AtSign, Globe2, Mail, Phone } from "lucide-react";
 import { Suspense } from "react";
 import InquiryForm from "@/components/contact/InquiryForm";
 import { siteConfig } from "@/data/site";
@@ -15,7 +15,7 @@ export default function ContactPage() {
     <main className="contact-page">
       <section
         className="page-hero contact-hero relative min-h-96 flex justify-between items-end
-          bg-stone-100 max-md:min-h-80 max-md:pt-16 px-6 pb-11 min-h-96 max-md:min-h-80"
+          bg-stone-100 max-md:min-h-80 max-md:pt-16 px-6 pb-11"
       >
         <div className="page-hero-main max-w-3xl">
           <span
@@ -80,8 +80,21 @@ export default function ContactPage() {
               <Mail size={20} />
             </span>
             <div>
-              <b>Email</b>
+              <b>Info</b>
               <small>{siteConfig.contactEmail}</small>
+            </div>
+            <ArrowUpRight size={16} />
+          </a>
+          <a
+            className="contact-method min-h-16 flex items-center gap-3 border-b"
+            href={`mailto:${siteConfig.salesEmail}`}
+          >
+            <span>
+              <Mail size={20} />
+            </span>
+            <div>
+              <b>Sales</b>
+              <small>{siteConfig.salesEmail}</small>
             </div>
             <ArrowUpRight size={16} />
           </a>
@@ -161,6 +174,16 @@ export default function ContactPage() {
                   <circle cx="12" cy="12" r="4" />
                   <circle cx="17.5" cy="6.5" r="1" className="fill-current stroke-none" />
                 </svg>
+              </a>
+              <a
+                className="grid size-10 place-items-center rounded-full border border-stone-500
+                  text-stone-300 transition hover:border-orange hover:text-orange"
+                href="https://www.threads.net/@wenside1"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Wenside on Threads"
+              >
+                <AtSign aria-hidden="true" className="size-5" />
               </a>
             </div>
           </div>

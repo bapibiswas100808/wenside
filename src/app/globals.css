@@ -1072,20 +1072,67 @@ h2 em {
   gap: 5%;
   padding-bottom: 53px;
 }
-.footer-wordmark {
-  color: #fff;
+.footer-logo {
+  position: relative;
+  display: block;
+  width: 160px;
+  height: 55px;
+  overflow: hidden;
 }
-.footer-wordmark .wordmark-image {
-  width: 150px;
-  height: 78px;
-  flex: 0 0 auto;
+.footer-logo-image {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 160px;
+  height: 160px;
+  max-width: none;
 }
 .footer-brand > p {
   max-width: 250px;
-  margin: 18px 0 0;
+  margin: 0;
   color: #b4b6a9;
   font-size: 11px;
   line-height: 1.8;
+}
+.floating-actions {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.floating-action {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 16px #0003;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+.floating-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px #0004;
+}
+.floating-action:focus-visible {
+  outline-color: var(--blue);
+  outline-offset: 3px;
+}
+.floating-whatsapp {
+  background: #25d366;
+}
+footer .floating-actions .floating-catalogue {
+  background-color: #0a73c0;
 }
 .footer-column {
   display: flex;
@@ -2507,6 +2554,29 @@ body {
 }
 
 @media (max-width: 760px) {
+  .floating-actions {
+    right: 14px;
+    bottom: 14px;
+    gap: 8px;
+  }
+
+  .floating-action {
+    min-height: 36px;
+    gap: 6px;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+
+  .floating-whatsapp svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .floating-catalogue svg {
+    width: 14px;
+    height: 14px;
+  }
+
   .category-description {
     font-size: 10px;
   }

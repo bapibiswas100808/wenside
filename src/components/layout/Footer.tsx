@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, AtSign, Download, MessageCircle } from "lucide-react";
 import { productCategories } from "@/data/products";
 import CurrentYear from "@/components/layout/CurrentYear";
 import Image from "next/image";
@@ -12,15 +12,17 @@ export default function Footer() {
         className="footer-top grid grid-cols-4 gap-8 pb-14 max-md:grid-cols-2 max-md:gap-6
           max-md:pb-9"
       >
-        <div className="relative">
-          <Link
-            className="wordmark footer-wordmark inline-flex items-center gap-2 text-base
-              font-extrabold tracking-wide leading-none text-white"
-            href="/"
-          >
-            <Image className="absolute" height={200} width={200} src="/images/logo1.png" alt="" />
+        <div className="footer-brand relative">
+          <Link className="footer-logo" href="/" aria-label="Wenside home">
+            <Image
+              className="footer-logo-image"
+              height={200}
+              width={200}
+              src="/images/logo1.png"
+              alt=""
+            />
           </Link>
-          <p className="pt-10 text-sm text-stone-400 max-md:pt-6">
+          <p className="text-sm text-stone-400 pt-5">
             {siteConfig.legalName}
             Smoking accessories and packaging solutions for international brands.
           </p>
@@ -56,6 +58,16 @@ export default function Footer() {
                 <circle cx="17.5" cy="6.5" r="1" className="fill-current stroke-none" />
               </svg>
             </a>
+            <a
+              className="grid size-10 place-items-center rounded-full border border-stone-500
+                text-stone-300 transition hover:border-orange hover:text-orange"
+              href="https://www.threads.net/@wenside1"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Wenside on Threads"
+            >
+              <AtSign aria-hidden="true" className="size-5" />
+            </a>
           </div>
         </div>
         <div className="footer-column flex flex-col items-start gap-2.5">
@@ -83,6 +95,7 @@ export default function Footer() {
             Start a conversation <ArrowUpRight size={18} />
           </Link>
           <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>
+          <a href={`mailto:${siteConfig.salesEmail}`}>{siteConfig.salesEmail}</a>
           <a href={`tel:${siteConfig.phoneLink}`}>{siteConfig.phone}</a>
         </div>
       </div>
@@ -98,6 +111,26 @@ export default function Footer() {
           {siteConfig.socialHandle} · <a href={siteConfig.zapWrapWebsite}>ZapWrap</a>
         </span>
       </div>
+      <nav className="floating-actions" aria-label="Quick actions">
+        <a
+          className="floating-action floating-whatsapp"
+          href={`https://wa.me/${siteConfig.phoneLink.replace(/\D/g, "")}`}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Chat with Wenside on WhatsApp at ${siteConfig.phone}`}
+        >
+          <MessageCircle aria-hidden="true" size={20} />
+          <span>WhatsApp</span>
+        </a>
+        <a
+          className="floating-action floating-catalogue"
+          href="/wenside_product_catalogue.pdf"
+          download="wenside_product_catalogue.pdf"
+        >
+          <Download aria-hidden="true" size={18} />
+          <span>Download catalogue</span>
+        </a>
+      </nav>
     </footer>
   );
 }

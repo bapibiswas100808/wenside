@@ -2,7 +2,7 @@
 
 import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import { useState, type FormEvent } from "react";
-import { ArrowUpRight, Info } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { products } from "@/data/products";
 
@@ -145,7 +145,7 @@ export default function InquiryForm() {
           />
         </label>
       </div>
-      <div
+      {/* <div
         className="form-disclaimer p-2.5 flex items-start gap-2 bg-stone-100 text-stone-500 text-xs
           leading-relaxed"
       >
@@ -154,7 +154,7 @@ export default function InquiryForm() {
           Your inquiry will be sent through EmailJS to our team. We’ll use your contact details only
           to respond to your request.
         </span>
-      </div>
+      </div> */}
       <div className="form-submit-row flex items-center gap-3.5 max-md:flex-col">
         <button
           className="button button-dark min-h-12 inline-flex items-center justify-center gap-4

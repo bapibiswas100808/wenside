@@ -22,7 +22,7 @@ export default function AboutPage() {
     <main className="about-page">
       <section
         className="page-hero about-hero relative min-h-96 flex justify-between items-end
-          bg-stone-100 max-md:min-h-80 max-md:pt-16 px-6 pb-11 min-h-96 max-md:min-h-80"
+          bg-stone-100 max-md:min-h-80 max-md:pt-16 px-6 pb-11"
       >
         <div className="page-hero-main max-w-3xl">
           <span
@@ -37,9 +37,12 @@ export default function AboutPage() {
             <em>partner for your brand.</em>
           </h1>
           <p>
-            {siteConfig.legalName} describes itself as a manufacturer and global supplier of smoking
-            accessories and packaging solutions for modern brands, wholesalers, and distributors
-            worldwide.
+            {siteConfig.legalName} is a manufacturer and global supplier specializing in rolling
+            papers, smoking accessories, and customized packaging solutions. We serve brands,
+            wholesalers, and distributors worldwide, offering quality products, OEM/ODM
+            customization, reliable supply, and dedicated customer support. Our goal is to help
+            businesses grow with innovative products and tailored solutions that meet the needs of
+            the global smoking accessories market.
           </p>
         </div>
         <div
@@ -86,14 +89,15 @@ export default function AboutPage() {
             <em>Partnership.</em>
           </h2>
           <p>
-            Wenside’s catalogue covers pre-rolled cones, hemp wraps, rolling paper booklets, paper
-            bobbins, filter tips, grinders, smoking trays, rolling machines, cone tubes, and
-            silicone accessories.
+            Wenside offers a comprehensive range of rolling papers and smoking accessories,
+            including pre-rolled cones, hemp wraps, rolling paper booklets, paper bobbins, filter
+            tips, grinders, smoking trays, rolling machines, cone tubes, and silicone accessories.
           </p>
           <p>
-            The company presents its offer around customizable products, OEM / ODM services, quality
-            checks, export-standard packaging, and support for international buyers. Confirm product
-            details and current capabilities with Wenside.
+            We focus on customizable products, OEM/ODM solutions, quality control, export-ready
+            packaging, and reliable support for international buyers. From custom branding and
+            product development to packaging solutions, we work to meet the diverse requirements of
+            brands, wholesalers, and distributors worldwide.
           </p>
           <Link
             className="text-link inline-flex items-center gap-2 text-sm font-semibold"
@@ -241,8 +245,8 @@ export default function AboutPage() {
         </p>
       </section>
       <section
-        className="closing-cta about-cta relative overflow-hidden text-white bg-green max-md:pt-9
-          px-6 pb-12 bg-stone-500"
+        className="closing-cta about-cta relative overflow-hidden text-white max-md:pt-9 px-6 pb-12
+          bg-stone-500"
       >
         <div
           className="closing-topline flex justify-between text-stone-100 text-xs font-bold
