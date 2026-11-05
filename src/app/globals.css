@@ -1131,9 +1131,6 @@ h2 em {
 .floating-whatsapp {
   background: #25d366;
 }
-footer .floating-actions .floating-catalogue {
-  background-color: #0a73c0;
-}
 .footer-column {
   display: flex;
   flex-direction: column;
@@ -1225,6 +1222,180 @@ footer .floating-actions .floating-catalogue {
 }
 .page-hero-aside > span:last-child {
   margin-top: 23px;
+}
+.catalogue-book-intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.catalogue-book-intro h2 {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+.catalogue-book-intro p {
+  max-width: 430px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.catalogue-reader-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px;
+  border: 1px solid #d5d1c5;
+  background: #e8e4d8;
+  box-shadow: 0 24px 60px #25291c1c;
+}
+.catalogue-book {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 13px 13px 27px;
+  border-radius: 3px 8px 8px 3px;
+  background: #f4f1e8;
+  box-shadow: 0 2px 6px #25291c24;
+}
+.catalogue-book::before {
+  position: absolute;
+  z-index: 1;
+  top: 13px;
+  bottom: 13px;
+  left: 13px;
+  width: 13px;
+  border-right: 1px solid #b7b2a5;
+  background: linear-gradient(90deg, #77766f40, #f8f6ef00);
+  content: "";
+  pointer-events: none;
+}
+.catalogue-flipbook-stage {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.catalogue-flip-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: white;
+}
+.catalogue-page-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: white;
+  box-shadow: 0 3px 14px #25291c1c;
+}
+.catalogue-flipbook-loading {
+  width: 100%;
+  min-height: clamp(300px, 60vh, 600px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+.catalogue-flipbook-loading progress {
+  width: min(320px, 80%);
+  height: 6px;
+  accent-color: var(--ink);
+}
+.catalogue-loading-spinner {
+  animation: catalogue-spin 1s linear infinite;
+}
+.catalogue-load-error p {
+  margin: 0;
+  line-height: 1.6;
+}
+@keyframes catalogue-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.catalogue-book-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1120px;
+  margin: 20px auto 0;
+}
+.catalogue-reader-navigation {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.catalogue-page-button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  background: var(--paper-light);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+.catalogue-page-button:hover:not(:disabled) {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: white;
+}
+.catalogue-page-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+.catalogue-page-indicator {
+  min-width: 94px;
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.catalogue-reader-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.catalogue-open-link {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 15px;
+  border: 1px solid var(--line);
+  background: var(--paper-light);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+.catalogue-open-link:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: white;
 }
 .round-arrow {
   width: 49px;
@@ -2150,6 +2321,41 @@ footer .floating-actions .floating-catalogue {
     max-width: 440px;
     font-size: 12px;
   }
+  .catalogue-book-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .catalogue-book-intro p {
+    font-size: 12px;
+  }
+  .catalogue-reader-shell {
+    padding: 8px;
+  }
+  .catalogue-book {
+    padding: 8px 8px 8px 17px;
+  }
+  .catalogue-book::before {
+    top: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: 9px;
+  }
+  .catalogue-flipbook-loading {
+    min-height: clamp(260px, 50vh, 420px);
+    padding: 16px;
+  }
+  .catalogue-book-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .catalogue-reader-navigation {
+    justify-content: space-between;
+  }
+  .catalogue-open-link {
+    width: 100%;
+  }
   .catalogue-content {
     padding-top: 25px;
     padding-bottom: 70px;
@@ -2570,11 +2776,6 @@ body {
   .floating-whatsapp svg {
     width: 15px;
     height: 15px;
-  }
-
-  .floating-catalogue svg {
-    width: 14px;
-    height: 14px;
   }
 
   .category-description {

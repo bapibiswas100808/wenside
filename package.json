@@ -8,22 +8,26 @@
     "start": "node app.js",
     "lint": "eslint",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
-    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\""
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\"",
+    "catalogue:render": "node scripts/render-catalogue.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^5.0.3",
     "lucide-react": "^1.62.0",
     "next": "16.4.3",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "react-pageflip": "^2.0.3"
   },
   "devDependencies": {
+    "@napi-rs/canvas": "^0.1.100",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
+    "pdfjs-dist": "^5.4.394",
     "prettier": "^3.9.10",
     "prettier-plugin-classnames": "^0.10.5",
     "tailwindcss": "^4",

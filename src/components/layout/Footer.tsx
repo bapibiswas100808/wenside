@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, AtSign, Download, MessageCircle } from "lucide-react";
+import { ArrowUpRight, AtSign, MessageCircle } from "lucide-react";
 import { productCategories } from "@/data/products";
 import CurrentYear from "@/components/layout/CurrentYear";
 import Image from "next/image";
@@ -121,14 +121,6 @@ export default function Footer() {
         >
           <MessageCircle aria-hidden="true" size={20} />
           <span>WhatsApp</span>
-        </a>
-        <a
-          className="floating-action floating-catalogue"
-          href="/wenside_product_catalogue.pdf"
-          download="wenside_product_catalogue.pdf"
-        >
-          <Download aria-hidden="true" size={18} />
-          <span>Download catalogue</span>
         </a>
       </nav>
     </footer>

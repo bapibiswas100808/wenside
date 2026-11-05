@@ -64,9 +64,9 @@ export default function Home() {
           <h1 className="my-0 mt-7 mb-6 text-5xl leading-none font-medium tracking-tighter text-ink">
             Your global source for
             <br />
-            <em className="font-serif font-medium tracking-tighter text-orange">rolling papers</em>
+            <em className="font-serif font-medium tracking-tighter text-orange">Rolling Papers</em>
             <br />
-            and smoking accessories.
+            and Smoking Accessories.
           </h1>
           <p className="mb-7 max-w-96 text-sm leading-loose text-stone-500 lg:text-sm">
             Wenside is your trusted partner for rolling papers, smoking accessories, and custom
@@ -226,7 +226,7 @@ export default function Home() {
               className="button button-outline min-h-12 inline-flex items-center justify-center
                 gap-4 border text-sm font-semibold transition-transform border-stone-200
                 bg-stone-100"
-              href="/products"
+              href="/catalogue"
             >
               View the catalogue <ArrowRight size={16} />
             </Link>

@@ -18,12 +18,12 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Wenside — Smoking Accessories & B2B Supply",
+    default: "Custom Rolling Paper | Rolling papers Brand | Accessories Manufacturer",
     template: "%s | Wenside",
   },
   description: siteConfig.description,
   openGraph: {
-    title: "Wenside — Smoking Accessories & B2B Supply",
+    title: "Custom Rolling Paper | Rolling papers Brand | Accessories Manufacturer",
     description: siteConfig.description,
     siteName: siteConfig.name,
     type: "website",
