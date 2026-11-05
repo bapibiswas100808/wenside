@@ -6,10 +6,10 @@ import { ChevronLeft, ChevronRight, ExternalLink, LoaderCircle } from "lucide-re
 import { useEffect, useRef, useState } from "react";
 
 const PAGE_COUNT = 15;
-const PAGE_ASPECT_RATIO = 841.92 / 595.2;
+const PAGE_ASPECT_RATIO = 674.6 / 475.9;
 const PAGE_SOURCES = Array.from(
   { length: PAGE_COUNT },
-  (_, index) => `/catalogue-pages/page-${String(index + 1).padStart(2, "0")}.png`,
+  (_, index) => `/wsd-zapwrap-brochure-pages/page-${String(index + 1).padStart(2, "0")}.png`,
 );
 
 const HTMLFlipBook = dynamic(() => import("react-pageflip"), {
@@ -144,15 +144,15 @@ export default function CatalogueBook() {
       <div className="catalogue-book-intro">
         <div>
           <span className="eyebrow">TURN THE PAGES</span>
-          <h2>Explore the Wenside range.</h2>
+          <h2>Explore the WSD ZapWrap range.</h2>
         </div>
-        <p>Use the arrows, swipe, or turn a page to explore the full catalogue.</p>
+        <p>Use the arrows, swipe, or turn a page to explore the full brochure.</p>
       </div>
       <div className="catalogue-reader-shell">
         <div className="catalogue-book" ref={stageRef}>
           {loadError ? (
             <div className="catalogue-flipbook-loading catalogue-load-error" role="alert">
-              <p>We couldn&apos;t load every catalogue page. Please refresh to try again.</p>
+              <p>We couldn&apos;t load every brochure page. Please refresh to try again.</p>
               <button
                 type="button"
                 className="catalogue-page-button"
@@ -196,7 +196,7 @@ export default function CatalogueBook() {
                     <Image
                       className="catalogue-page-image"
                       src={page.src}
-                      alt={`Wenside product catalogue page ${index + 1}`}
+                      alt={`WSD ZapWrap product brochure page ${index + 1}`}
                       fill
                       sizes="(max-width: 760px) calc(100vw - 80px), 980px"
                       loading="eager"
@@ -210,12 +210,12 @@ export default function CatalogueBook() {
             <div className="catalogue-flipbook-loading" role="status" aria-live="polite">
               <LoaderCircle className="catalogue-loading-spinner" size={24} aria-hidden="true" />
               <span>
-                Loading catalogue pages: {loadedPages} of {PAGE_COUNT}
+                Loading brochure pages: {loadedPages} of {PAGE_COUNT}
               </span>
               <progress
                 value={loadedPages}
                 max={PAGE_COUNT}
-                aria-label="Catalogue loading progress"
+                aria-label="Brochure loading progress"
               />
             </div>
           )}
@@ -226,7 +226,7 @@ export default function CatalogueBook() {
           <div
             className="catalogue-reader-navigation"
             role="group"
-            aria-label="Catalogue page controls"
+            aria-label="Brochure page controls"
           >
             <button
               type="button"
@@ -254,11 +254,11 @@ export default function CatalogueBook() {
           </div>
           <a
             className="catalogue-open-link"
-            href="/wenside_product_catalogue.pdf"
+            href="/WSD%20ZapWrap%20Product%20Brochure.pdf"
             target="_blank"
             rel="noreferrer"
           >
-            Open full-size catalogue <ExternalLink size={15} aria-hidden="true" />
+            Open full-size brochure <ExternalLink size={15} aria-hidden="true" />
           </a>
         </div>
       )}

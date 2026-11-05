@@ -1,38 +1,49 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createCanvas, DOMMatrix, ImageData, Path2D } from "@napi-rs/canvas";
+import { PDFiumLibrary } from "@hyzyla/pdfium";
+import sharp from "sharp";
 
-globalThis.DOMMatrix ??= DOMMatrix;
-globalThis.ImageData ??= ImageData;
-globalThis.Path2D ??= Path2D;
-
-const pdfPath = fileURLToPath(new URL("../public/wenside_product_catalogue.pdf", import.meta.url));
-const outputDirectory = fileURLToPath(new URL("../public/catalogue-pages/", import.meta.url));
-const { getDocument } = await import("pdfjs-dist/legacy/build/pdf.mjs");
-const pdf = await getDocument({ data: new Uint8Array(await readFile(pdfPath)) }).promise;
+const pdfPath = fileURLToPath(
+  new URL("../public/WSD%20ZapWrap%20Product%20Brochure.pdf", import.meta.url),
+);
+const outputDirectory = fileURLToPath(
+  new URL("../public/wsd-zapwrap-brochure-pages/", import.meta.url),
+);
+const library = await PDFiumLibrary.init();
+const document = await library.loadDocument(new Uint8Array(await readFile(pdfPath)));
 const renderScale = 3;
+const pageCount = document.getPageCount();
 
-if (pdf.numPages !== 15) {
-  throw new Error(`Expected a 15-page catalogue, but found ${pdf.numPages} pages.`);
+if (pageCount !== 15) {
+  document.destroy();
+  library.destroy();
+  throw new Error(`Expected a 15-page brochure, but found ${pageCount} pages.`);
 }
 
 await mkdir(outputDirectory, { recursive: true });
 
 try {
-  for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber += 1) {
-    const page = await pdf.getPage(pageNumber);
-    const viewport = page.getViewport({ scale: renderScale });
-    const canvas = createCanvas(Math.ceil(viewport.width), Math.ceil(viewport.height));
+  for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
+    const page = document.getPage(pageIndex);
 
-    await page.render({ canvasContext: canvas.getContext("2d"), viewport }).promise;
+    try {
+      const image = await page.render({
+        scale: renderScale,
+        render: ({ data, width, height }) =>
+          sharp(data, { raw: { width, height, channels: 4 } })
+            .png()
+            .toBuffer(),
+      });
 
-    const pageName = `page-${String(pageNumber).padStart(2, "0")}.png`;
-    const image = canvas.toBuffer("image/png");
-    await writeFile(join(outputDirectory, pageName), image);
-    await page.cleanup();
-    console.log(`Rendered page ${pageNumber}/${pdf.numPages} (${image.length} bytes).`);
+      const pageName = `page-${String(pageIndex + 1).padStart(2, "0")}.png`;
+      await writeFile(join(outputDirectory, pageName), image.data);
+      console.log(`Rendered page ${pageIndex + 1}/${pageCount} (${image.data.length} bytes).`);
+    } finally {
+      page.close();
+    }
   }
 } finally {
-  await pdf.destroy();
+  document.destroy();
+  library.destroy();
 }
