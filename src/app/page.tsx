@@ -104,9 +104,9 @@ export default function Home() {
         >
           <div className="hero-banner-frame">
             <Image
-              src="/images/banner2.png"
+              src="/images/banner3.png"
               alt="Wenside smoking accessories and branded product range"
-              width={1888}
+              width={1800}
               height={1312}
               priority
               sizes="(max-width: 760px) 100vw, 55vw"
