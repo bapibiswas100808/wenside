@@ -1,6 +1,6 @@
 # Wenside
 
-Responsive B2B catalogue site for Wenside, built with Next.js App Router, TypeScript, and Tailwind CSS. Product descriptions and specifications are based on the supplied 18-page Wenside catalogue; product photography and illustrations are local assets.
+Responsive B2B catalogue site for Wenside, built with Next.js App Router, TypeScript, and Tailwind CSS. Product descriptions and specifications are based on the supplied WSD ZapWrap brochure; product photography and illustrations are local assets.
 
 Styling is implemented with Tailwind utilities in the JSX. `src/app/tailwind.css` only loads Tailwind; there is no site-specific global stylesheet.
 
@@ -36,7 +36,7 @@ The root `app.js` starts the production Next.js server on the port supplied by t
 
 ## Content and assets
 
-- **Product data:** edit `src/data/products.ts`. It currently contains 15 catalogue product types in 10 catalogue-derived categories. The PDF provides options and sizes but does not identify formal model/SKU codes.
+- **Product data:** edit `src/data/catalogue-products.ts`. The homepage and product filters use the six catalogue categories in `src/data/products.ts`.
 - **Product images:** product records reference local assets under `public/images/products/`. Paper tips and perforated tips are listed in the catalogue but do not have a clearly matching dedicated product image.
 - **Brand logo:** the header and footer use `public/images/logo.png`.
 - **Contact and company details:** edit `src/data/site.ts`. Email, phone, websites, and the social handle are transcribed from the catalogue. It supplies `@wenside1` without naming a social platform, so the handle is shown without an assumed profile link.

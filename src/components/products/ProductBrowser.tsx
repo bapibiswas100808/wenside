@@ -2,15 +2,30 @@
 
 import { useMemo, useState } from "react";
 import { Search, SlidersHorizontal, X } from "lucide-react";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import ProductCard from "@/components/products/ProductCard";
 import { productCategories, products } from "@/data/products";
 
 export default function ProductBrowser() {
+  const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [category, setCategory] = useState(searchParams.get("category") ?? "");
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("featured");
+  const category = productCategories.find((item) => item === searchParams.get("category")) ?? "";
+
+  function setCategory(nextCategory: string) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (nextCategory) {
+      params.set("category", nextCategory);
+    } else {
+      params.delete("category");
+    }
+
+    const queryString = params.toString();
+    router.replace(queryString ? `${pathname}?${queryString}` : pathname, { scroll: false });
+  }
+
   const visibleProducts = useMemo(() => {
     const filtered = products.filter((product) => {
       const matchesCategory = !category || product.category === category;

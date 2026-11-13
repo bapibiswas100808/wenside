@@ -15,10 +15,10 @@ const document = await library.loadDocument(new Uint8Array(await readFile(pdfPat
 const renderScale = 3;
 const pageCount = document.getPageCount();
 
-if (pageCount !== 15) {
+if (pageCount !== 16) {
   document.destroy();
   library.destroy();
-  throw new Error(`Expected a 15-page brochure, but found ${pageCount} pages.`);
+  throw new Error(`Expected a 16-page brochure, but found ${pageCount} pages.`);
 }
 
 await mkdir(outputDirectory, { recursive: true });

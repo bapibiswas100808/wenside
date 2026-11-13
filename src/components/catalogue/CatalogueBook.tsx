@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, ExternalLink, LoaderCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const PAGE_COUNT = 15;
+const PAGE_COUNT = 16;
 const PAGE_ASPECT_RATIO = 674.6 / 475.9;
 const PAGE_SOURCES = Array.from(
   { length: PAGE_COUNT },

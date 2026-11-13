@@ -32,7 +32,7 @@ export default function CataloguePage() {
             <br />
             BROCHURE
           </span>
-          <span>15 PAGES</span>
+          <span>16 PAGES</span>
         </div>
       </section>
       <section className="section w-full max-w-7xl mx-auto pt-12 pb-24 max-md:pt-8 max-md:pb-16">
